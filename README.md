@@ -77,6 +77,7 @@ The project is organized into separate directories based on their responsibiliti
 
 ```bash
 .
+├── architect
 ├── src
 │   ├── notifications
 │   │   ├── channels
