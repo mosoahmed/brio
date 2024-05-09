@@ -1,0 +1,28 @@
+graph TB
+    A[User]
+    B[Application]
+    C[NotificationModule]
+    D[NotificationController]
+    E[NotificationService]
+    F[EmailChannel]
+    G[UIChannel]
+    H[UINotificationService]
+    I[UINotificationRepository]
+    J[CompanyMock]
+    K[UserMock]
+    L[NotificationType]
+    M[UINotification]
+    A --> B
+    B --> C
+    C --> D
+    C --> E
+    C --> F
+    C --> G
+    C --> H
+    C --> I
+    C --> J
+    C --> K
+    E --> L
+    H --> M
+    F --> I
+    G --> I

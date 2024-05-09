@@ -1,0 +1,10 @@
+graph TB
+    A[User visits the application] --> B[User triggers a notification]
+    B --> C[`NotificationController.sendNotification` is called]
+    C --> D[`NotificationService.sendNotification` sends the notification]
+    D --> E[`EmailChannel.sendNotification` and `UIChannel.sendNotification` send the notification to the user]
+    E --> F[User receives the notification]
+    F --> G[User requests to view all UI notifications]
+    G --> H[`NotificationController.getUINotifications` is called]
+    H --> I[`UINotificationService.getByUserId` retrieves all UI notifications for the user]
+    I --> J[User views the retrieved notifications]
