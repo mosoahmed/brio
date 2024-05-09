@@ -103,7 +103,32 @@ The project is organized into separate directories based on their responsibiliti
 │   │   │   └── notification.types.ts
 │   │   └── notifications.module.ts
 │   └── app.module.ts
+```
+## OOP Concepts and Design Patterns
 
+This project utilizes several Object-Oriented Programming (OOP) concepts and design patterns:
+
+1. **Classes and Objects**: The project uses classes and objects extensively. For example, `NotificationController`, `NotificationService`, `UINotificationService`, and `EmailChannel` are all classes. Instances of these classes are objects.
+
+2. **Encapsulation**: The project uses encapsulation to bundle data and methods that operate on that data within one unit, i.e., a class. For example, the `NotificationService` class encapsulates the logic for sending notifications.
+
+3. **Inheritance**: Although not explicitly shown in the provided code excerpts, the project likely uses inheritance, given it's a common OOP concept. Inheritance allows classes to inherit fields and methods from other classes.
+
+4. **Polymorphism**: Polymorphism is used in the project through the use of TypeScript interfaces. For example, different types of channels (`EmailChannel` and `UIChannel`) could implement a common `Channel` interface and provide their own implementation of the methods.
+
+5. **Dependency Injection**: This is a design pattern used extensively in the project. NestJS, the framework used in the project, has built-in support for dependency injection. This pattern allows the system to be more flexible, testable, and modular. For example, `NotificationService` and `UINotificationService` are injected into `NotificationController`.
+
+6. **Module Pattern**: The project is organized into modules, such as `NotificationModule`. This is a design pattern that provides a way to wrap a group of related functionalities into a single unit, promoting separation of concerns.
+
+7. **Repository Pattern**: The `UINotificationRepository` class is an example of the Repository pattern. This pattern abstracts the data access logic, making the application more maintainable and flexible.
+
+8. **Mock Objects**: The `CompanyMock` and `UserMock` are examples of the Mock Object pattern, which is used for unit testing. Mock objects mimic the behavior of real objects in controlled ways.
+
+9. **Singleton Pattern**: The NestJS services, like `NotificationService` and `UINotificationService`, are singleton by default. This means that NestJS instantiates a single instance of these classes and reuses them, ensuring that data is shared and consistent throughout the application.
+
+10. **Factory Pattern**: Although not explicitly shown in the provided code excerpts, the Factory pattern is commonly used in NestJS applications for creating objects. For example, a factory could be used to create different types of notifications based on the notification type.
+
+Please note that the actual usage of these concepts and patterns may vary based on the complete codebase.
 
 ### Built With
 
