@@ -128,7 +128,19 @@ This project utilizes several Object-Oriented Programming (OOP) concepts and des
 
 10. **Factory Pattern**: Although not explicitly shown in the provided code excerpts, the Factory pattern is commonly used in NestJS applications for creating objects. For example, a factory could be used to create different types of notifications based on the notification type.
 
-Please note that the actual usage of these concepts and patterns may vary based on the complete codebase.
+
+## How We Extend It
+
+This project can be extended in several ways to add more functionality and make it more robust. Here are some potential extensions:
+
+1. **User and User Preferences Module**: A new module can be created to manage users and their preferences. This module can include classes like `User`, `UserPreferences`, `UserController`, `UserService`, and `UserPreferencesService`. The `UserPreferences` can include settings for notification preferences, such as preferred notification channels, times to receive notifications, etc.
+
+2. **Company and Company Preferences Module**: Similar to the User module, a Company module can be created to manage companies and their preferences. This module can include classes like `Company`, `CompanyPreferences`, `CompanyController`, `CompanyService`, and `CompanyPreferencesService`. The `CompanyPreferences` can include settings for company-wide notification preferences.
+
+3. **Additional Notification Channels**: The project can be extended to support more notification channels like WhatsApp, Facebook, etc. For each new channel, a new class (e.g., `WhatsAppChannel`, `FacebookChannel`) can be created that implements the `Channel` interface. The `NotificationService` can be updated to send notifications through these new channels based on user or company preferences.
+
+
+
 
 ### Built With
 
