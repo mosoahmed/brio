@@ -1,28 +1,38 @@
 graph TB
-    A[User]
-    B[Application]
-    C[NotificationModule]
-    D[NotificationController]
-    E[NotificationService]
-    F[EmailChannel]
-    G[UIChannel]
-    H[UINotificationService]
-    I[UINotificationRepository]
-    J[CompanyMock]
-    K[UserMock]
-    L[NotificationType]
-    M[UINotification]
-    A --> B
-    B --> C
-    C --> D
-    C --> E
-    C --> F
-    C --> G
-    C --> H
-    C --> I
-    C --> J
-    C --> K
-    E --> L
-    H --> M
-    F --> I
-    G --> I
+    subgraph "User Interaction"
+        A[User]
+        B[Application]
+        A --> B
+    end
+    subgraph "Notification Module"
+        C[NotificationModule]
+        B --> C
+        D[NotificationController]
+        E[NotificationService]
+        F[EmailChannel]
+        G[UIChannel]
+        C --> D
+        C --> E
+        C --> F
+        C --> G
+    end
+    subgraph "UI Notification"
+        H[UINotificationService]
+        I[UINotificationRepository]
+        C --> H
+        C --> I
+    end
+    subgraph "Mock Objects"
+        J[CompanyMock]
+        K[UserMock]
+        C --> J
+        C --> K
+    end
+    subgraph "Notification Types"
+        L[NotificationType]
+        M[UINotification]
+        E --> L
+        H --> M
+        F --> I
+        G --> I
+    end
