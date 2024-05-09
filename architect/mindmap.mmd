@@ -1,14 +1,47 @@
 graph TB
+    style A fill:#000000,stroke:#333,stroke-width:2px
+    style B fill:#ffffff,stroke:#333,stroke-width:2px
+    style C fill:#ff0000,stroke:#333,stroke-width:2px
+    style D fill:#00ff00,stroke:#333,stroke-width:2px
+    style E fill:#0000ff,stroke:#333,stroke-width:2px
+    style F fill:#005577,stroke:#333,stroke-width:2px
+    style G fill:#005577,stroke:#333,stroke-width:2px
+    style H fill:#005577,stroke:#333,stroke-width:2px
+    style I fill:#005577,stroke:#333,stroke-width:2px
+    style J fill:#005577,stroke:#333,stroke-width:2px
+    style K fill:#005577,stroke:#333,stroke-width:2px
+    style L fill:#005577,stroke:#333,stroke-width:2px
+    style M fill:#005577,stroke:#333,stroke-width:2px
     A[Application]
-    A --> B[User]
-    B --> C[Triggers Notification]
-    C --> D[NotificationController.sendNotification]
-    D --> E[NotificationService.sendNotification]
-    E --> F[EmailChannel.sendNotification]
-    E --> G[UIChannel.sendNotification]
-    F --> H[User receives Email Notification]
-    G --> I[User receives UI Notification]
-    B --> J[Requests UI Notifications]
-    J --> K[NotificationController.getUINotifications]
-    K --> L[UINotificationService.getByUserId]
-    L --> M[User views UI Notifications]
+    subgraph "User Interaction"
+        B[User]
+        A --> B
+        C[Triggers Notification]
+        B --> C
+    end
+    subgraph "Notification Sending"
+        D[NotificationController.sendNotification]
+        C --> D
+        E[NotificationService.sendNotification]
+        D --> E
+        F[EmailChannel.sendNotification]
+        G[UIChannel.sendNotification]
+        E --> F
+        E --> G
+    end
+    subgraph "Notification Receiving"
+        H[User receives Email Notification]
+        I[User receives UI Notification]
+        F --> H
+        G --> I
+    end
+    subgraph "UI Notifications Request"
+        J[Requests UI Notifications]
+        B --> J
+        K[NotificationController.getUINotifications]
+        J --> K
+        L[UINotificationService.getByUserId]
+        K --> L
+        M[User views UI Notifications]
+        L --> M
+    end
