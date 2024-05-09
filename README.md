@@ -147,6 +147,7 @@ This project can be extended in several ways to add more functionality and make 
 - [NestJS](https://nestjs.com/) - The framework used
 - [MongoDB](https://www.mongodb.com/) - Database platform
 - [Docker](https://www.docker.com/) - Container platform
+- [Mermaid](https://www.mermaid.js.org) - Diagramming and charting tool
 
 ### Authors
 
